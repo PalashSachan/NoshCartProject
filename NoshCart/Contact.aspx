@@ -40,7 +40,7 @@
                          <img src="Image/text.png" class="auto-style1" />
                     </td>
                     <td>
-                        +91 1233456789
+                        +919956551996
                     </td>
                 </tr>
                 <tr>
@@ -49,7 +49,8 @@
 
                     </td>
                     <td>
-                        @nosh.com
+                        palashsachan@gmail.com
+                        palashsachan@nosh.com
                     </td>
                 </tr>
             </table>
