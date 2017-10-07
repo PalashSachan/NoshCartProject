@@ -1,7 +1,7 @@
 # NoshCartProject
 
 
-learning ASP.NET for me as a student is very fun for me..It's a demo shopping website for learning educational purpose only
+learning ASP.NET for me as a student is very fun..It's a demo shopping website for learning educational purpose only
 
 
 This NoshCart(FoodCart) Project in INCOMPLETE and is Under Development.
