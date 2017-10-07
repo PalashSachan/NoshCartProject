@@ -50,7 +50,6 @@
                     </td>
                     <td>
                         palashsachan@gmail.com
-                        palashsachan@nosh.com
                     </td>
                 </tr>
             </table>
