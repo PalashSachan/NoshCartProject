@@ -65,7 +65,7 @@ namespace NoshCart.Account
             sbEmailBody.Append("Dear " + UserName + ",<br/><br/>"); 
             sbEmailBody.Append("Please click on the following link to reset your password");
             sbEmailBody.Append("<br/>");
-            sbEmailBody.Append("http://noshcart.somee.com/Account/ChangePassword?uid=" + UniqueId);
+            sbEmailBody.Append("http://palashsachanvs-001-site1.atempurl.com/Account/ChangePassword?uid=" + UniqueId);
             sbEmailBody.Append("<br/><br/>");
             sbEmailBody.Append("<b>© " + DateTime.Now.Year + " - NoshCart.com</b>");
 
