@@ -21,6 +21,7 @@ Due to some reasons this zip file does not contain the database file
 So, Before Running the application you have to do the following things:-
 
 1.Execute or Run the database script file "ShoppingDB_SQL_Script.sql" present in the "App_Data" Folder.
+
 2.Modify the "Connection String" in "Web.Config" File.
 
 If, everything went fine then the project will run perfectly.
