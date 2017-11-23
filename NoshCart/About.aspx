@@ -9,11 +9,6 @@
             height: 288px;
         }
 
-        .auto-style21 {
-            width: 875px;
-            height: 775px;
-        }
-
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">

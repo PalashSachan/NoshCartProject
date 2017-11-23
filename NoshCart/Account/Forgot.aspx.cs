@@ -12,17 +12,13 @@ namespace NoshCart.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if ((bool)Session["IsAuthenticated"] == true) //checking the user is Authenticated or not
-            //{
-            //    Response.Redirect("~/Menu"); //redirecting the user to menu page
-            //}
-            Form.DefaultButton = "SubmitButton";
+              
         }
 
         protected void Forgot(object sender, EventArgs e) //invoked when user clicks on the forgot button
         {
-            //if (IsValid) //checking the page validation is valid or not
-            //{
+            if (IsValid) //checking the page validation is valid or not
+            {
                 using (SqlConnection con = new SqlConnection(DataAccess.ConnectionString)) //creating the sql connection object and passing the connection string object for the connection with database
                 {
                     SqlCommand cmd = new SqlCommand("SP_UserResetPassword", con); //creating the sqlcommand object and passing the parameters as storedprocedures name and sqlconnection
@@ -51,7 +47,7 @@ namespace NoshCart.Account
                         }
                     }
                 }
-            //}
+            }
         }
 
         private void SendPasswordResetEmail(string ToEmail, string UserName, string UniqueId) //invoked when the user wants the reset link to send to email
@@ -65,7 +61,7 @@ namespace NoshCart.Account
             sbEmailBody.Append("Dear " + UserName + ",<br/><br/>"); 
             sbEmailBody.Append("Please click on the following link to reset your password");
             sbEmailBody.Append("<br/>");
-            sbEmailBody.Append("http://palashsachanvs-001-site1.atempurl.com/Account/ChangePassword?uid=" + UniqueId);
+            sbEmailBody.Append("http://localhost:7451/Account/ChangePassword?uid=" + UniqueId);
             sbEmailBody.Append("<br/><br/>");
             sbEmailBody.Append("<b>© " + DateTime.Now.Year + " - NoshCart.com</b>");
 
@@ -81,7 +77,7 @@ namespace NoshCart.Account
                 Password = "91@PalashTesting" //adding the password of the account
             };
 
-            smtpClient.EnableSsl = false; //use the SSL to encrypt connection
+            smtpClient.EnableSsl = true; //use the SSL to encrypt connection
             smtpClient.Send(mailMessage); //send the email
         }
     }

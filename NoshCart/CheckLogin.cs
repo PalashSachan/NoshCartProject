@@ -7,6 +7,9 @@ using System.Web.Security;
 using NoshCart.DataLayer;
 using System.Security.Cryptography;
 using System.Text;
+using System.Globalization;
+using System.Text.RegularExpressions;
+using System.Collections.Generic;
 
 namespace NoshCart.CheckLogin
 {
@@ -85,6 +88,57 @@ namespace NoshCart.CheckLogin
             HttpContext.Current.Session["Password"] = DataTableOfAuthenticatedUser.Rows[0]["Password"].ToString(); //storing the current user value into session variable
 
             DataTableOfAuthenticatedUser.Clear(); //clearing the datatable
+        }
+
+        public static string GetDate(DateTime date, int ch)
+        {
+            string dt = String.Format(date.ToString("dd-MM-yyyy hh:mm tt"), new CultureInfo("en-IN"));
+            if (ch == 1) //Get date only
+            {
+                int Day = date.Day;
+                dt = String.Format("{0:ddd, MMM }{0:dd}{1} \'{0:yy}", date, ((Day % 10 == 1 && Day != 11) ? "st" : (Day % 10 == 2 && Day != 12) ? "nd" : (Day % 10 == 3 && Day != 13) ? "rd" : "th"));
+            }
+            else if (ch == 2) //Get Time Only
+            {
+                dt = String.Format(date.ToString(" hh:mm tt", new CultureInfo("en-IN")));
+
+            }
+            else if (ch == 3) //Get Date with Time
+            {
+                dt = GetDate(date, 1) + GetDate(date, 2);
+            }
+
+            return dt;
+        }
+
+        public static string GetOnlyOrderIDFromText(string input)
+        {
+            return Regex.Replace(input, @"[^\d]", "");
+        }
+
+        public static string GetNumberOfItems(int num)
+        {
+            return num.ToString() + " item" + (num > 1 ? "s" : "");
+        }
+
+        private static List<string> allOrderIDs = new List<string>();
+
+        internal static void orderIDofCustomer(DataTable table)
+        {
+            foreach (DataRow row in table.Rows)
+            {
+                allOrderIDs.Add(Convert.ToString(row["OrderID"]));
+            }
+        }
+
+        public static string GetOrderIDText(int ord)
+        {
+            return "Order ID : " + ord;
+        }
+
+        public static bool orderIDwithCurrentUser(string Oid, string Uid, string currentUid)
+        {
+            return allOrderIDs.Contains(Oid) && Uid.Equals(currentUid) ? true : false;
         }
 
         public static bool AuthenticateUser(string username, string password) //invoked when to Authenticate the User
@@ -212,6 +266,33 @@ namespace NoshCart.CheckLogin
             }
         }
 
+        internal static string GetSubOrderID()
+        {
+            string subID = "";
+            using (SqlConnection con = new SqlConnection(DataAccess.ConnectionString)) //creating the sql connection
+            {
+                SqlCommand cmd = new SqlCommand("SP_GetSubOrderID", con); //passing the stored procedure name and connecting string
+                cmd.CommandType = CommandType.StoredProcedure; //setting the command type as stored procedure
+
+                SqlParameter SQLParamUserID = new SqlParameter("@UserID", Convert.ToInt64(HttpContext.Current.Session["Id"])); //assigning the value to sql parameter
+                SqlParameter SQLParamOrderID = new SqlParameter("@OrderID", Convert.ToInt64(HttpContext.Current.Session["OrderID"])); //assigning the value to sql parameter
+
+
+                cmd.Parameters.Add(SQLParamUserID); //adding the parameteres
+                cmd.Parameters.Add(SQLParamOrderID);
+
+
+
+                con.Open(); //opening the sql connection
+
+                var OrderID = cmd.ExecuteScalar(); //executing the command and getting the order ID
+                HttpContext.Current.Session["SubOrderID"] = Convert.ToInt64(OrderID.ToString()); //saving the order ID into session variable
+                subID = OrderID.ToString(); //saving the order ID into session variable
+
+            }
+            return subID;
+        }
+
         public static string GetEncryptedPassword(string Password) //invoked when to encrypt password
         {
             using (SHA1Managed sha1 = new SHA1Managed()) //creating the SHA1Managed class object
@@ -238,7 +319,7 @@ namespace NoshCart.CheckLogin
                 HttpContext.Current.Session["UserName"] = username; //setting the username
 
                 GetAuthenticatedUserAllInfo(); //calling the method to get all the user info
-                
+
                 HttpContext.Current.Session["prepage"] = "Register"; //setting the previous page to register
 
                 //HttpContext.Current.Session["UserIsNotLoggedInAndTryingToPlaceTheOrder"] = false; //making it false because the user is now on the cart page initially before placing the order

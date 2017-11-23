@@ -6,7 +6,8 @@
         <h2><%: Title %></h2>
         <div class="form-horizontal">
             <section id="passwordForm">
-                <div class="form-horizontal">
+                <asp:Panel runat="server" DefaultButton="ChangePasswordButton">
+                     <div class="form-horizontal">
                     <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
                         <p class="text-danger">
                             <asp:Literal runat="server" ID="FailureText" />
@@ -52,12 +53,15 @@
                         
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
-                                <asp:Button runat="server" Text="Change Password" ValidationGroup="ChangePassword" OnClick="ChangePassword_Click" CssClass="btn btn-default ButtonEffect" />
+                                <asp:Button ID="ChangePasswordButton" runat="server" Text="Change Password" ValidationGroup="ChangePassword" OnClick="ChangePassword_Click" CssClass="btn btn-default ButtonEffect" />
+                                <br />
+                                <br />
                             </div>
                         </div>
                         <asp:Label ID="LabelPasswordChanged" runat="server" Visible="false" CssClass="text-success" Text="Password Changed Successfully"></asp:Label>
                     </asp:PlaceHolder>
                 </div>
+                </asp:Panel>
             </section>
         </div>
     </div>

@@ -144,7 +144,8 @@ namespace NoshCart.SendSMS
         public static string SendSMS(string ToNumber, string ToMessage) //invoked when to send the sms message
         {
             ISmsMessageBuilder messageBuilder;
-            Guid productToken = new Guid("CD6398D1-BD65-4B40-BD96-7BCC015702B4");
+            //Guid productToken = new Guid("CD6398D1-BD65-4B40-BD96-7BCC015702B4");
+            Guid productToken = new Guid("303c309b-1926-4505-bcb8-9887d2973149");
                                           
             //Use XML or JSON per your own preference
             messageBuilder = new JsonSmsMessageBuilder();

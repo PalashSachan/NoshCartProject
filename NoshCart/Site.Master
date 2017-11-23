@@ -69,6 +69,55 @@
             left: 50%;
             margin: -11px 0 0 -55px;
         }
+
+        /*====================================*/
+
+        .dropbtn {
+            background-color: white;
+            color: white;
+            padding: 0px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: white;
+            width: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 2px 18px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #f1f1f1
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: white;
+        }
+
+        .divdr {
+            border-bottom: 1px solid #f1f1f1;
+        }
     </style>
 
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
@@ -77,18 +126,19 @@
     <script src="Scripts/bootstrap.min.js" type="text/javascript"></script>
     <script src="Scripts/jquery-3.1.1.min.js" type="text/javascript"></script>
     <script src="Scripts/jquery-3.1.1.js" type="text/javascript"></script>
-    <link href="Content/Icons/css/fontello.css" rel="stylesheet" />
+    <link href="Content/Icons/style.css" rel="stylesheet" />
+
 
 </head>
-<body style="background-image: url(../Image/background.jpg)">
-    <form id="form1" runat="server">
+<body align="center" style="background-image: url(../Image/background.jpg)">
+    <form align="center" id="form1" runat="server">
         <asp:ScriptManager ID="MasterScript" runat="server" EnablePageMethods="true" />
         <asp:UpdatePanel runat="server">
             <ContentTemplate>
                 <table id="t_design" align="center">
                     <tr>
                         <td align="right" class="auto-style19">
-                            <asp:ImageButton runat="server" ImageAlign="Left"  CssClass="auto-style18" BorderStyle="None" PostBackUrl="~/Home" ImageUrl="~/Image/logo.png" CausesValidation="false" />
+                            <asp:ImageButton runat="server" ImageAlign="Left" CssClass="auto-style18" BorderStyle="None" PostBackUrl="~/Home" ImageUrl="~/Image/logo.png" CausesValidation="false" />
                             <asp:ImageButton runat="server" ImageAlign="Right" CssClass="auto-style16" BorderStyle="None" PostBackUrl="~/Cart" ImageUrl="~/Image/cart.jpg" CausesValidation="false" />
                             <asp:LinkButton ID="CartQuantityIDLinkButton" runat="server" PostBackUrl="~/Cart" Font-Size="30pt" CausesValidation="false" Text="0" />
                         </td>
@@ -102,7 +152,7 @@
                             </asp:LinkButton>
 
                             <asp:LinkButton runat="server" ID="ButtonMenu" PostBackUrl="~/Menu" CssClass="btn btn-default btn-sm pull-left" BorderStyle="None" CausesValidation="false" Style="width: auto; height: auto" Text="Menu">
-                                <span class="icon-food"></span> Menu
+                                <span class="icon-restaurant_menu"></span> Menu
                             </asp:LinkButton>
 
                             <asp:LinkButton runat="server" ID="ButtonAbout" PostBackUrl="~/About" CssClass="btn btn-default btn-sm pull-left" BorderStyle="None" CausesValidation="false" Style="width: auto; height: auto" Text="About">
@@ -125,14 +175,30 @@
                                         </asp:LinkButton>
                                     </div>
                                 </AnonymousTemplate>
-                                
+
                                 <LoggedInTemplate>
                                     <div>
-                                        <asp:LoginStatus ID="LoginState" runat="server" ForeColor="Black" LoginText="&lt;i aria-hidden=&quot;true&quot; class=&quot;glyphicon glyphicon-log-in&quot;&gt;&lt;/i&gt; Sign In" CssClass="btn btn-default btn-sm pull-right" BorderStyle="None" LogoutAction="Redirect" LogoutText="&lt;i aria-hidden=&quot;true&quot; class=&quot;glyphicon glyphicon-log-out&quot;&gt;&lt;/i&gt; Sign out" LogoutPageUrl="~/Account/Login" OnLoggingOut="LoginState_LoggingOut" />
+                                        <%--<asp:LoginStatus ID="LoginState" runat="server" ForeColor="Black" LoginText="&lt;i aria-hidden=&quot;true&quot; class=&quot;glyphicon glyphicon-log-in&quot;&gt;&lt;/i&gt; Sign In" CssClass="btn btn-default btn-sm pull-right" BorderStyle="None" LogoutAction="Redirect" LogoutText="&lt;i aria-hidden=&quot;true&quot; class=&quot;glyphicon glyphicon-log-out&quot;&gt;&lt;/i&gt; Sign out" LogoutPageUrl="~/Account/Login" OnLoggingOut="LoginState_LoggingOut" />
 
                                         <asp:LinkButton runat="server" PostBackUrl="~/Account/Profile" ID="ButtonWelcomeUserName" CssClass="btn btn-default btn-sm pull-right" BorderStyle="None" CausesValidation="false" Style="width: auto">
                                     <span class="glyphicon glyphicon-user"></span> Hello, <%: HttpContext.Current.User.Identity.Name  %>
-                                        </asp:LinkButton>
+                                        </asp:LinkButton>--%>
+
+                                        <div class="dropdown" style="float: right;">
+                                            <button class="dropbtn">
+                                                <asp:LinkButton runat="server" PostBackUrl="~/Account/Profile" ID="ButtonWelcomeUserName" CssClass="btn btn-default btn-sm pull-right" BorderStyle="None" CausesValidation="false" Style="width: auto">
+                                                    <span class="glyphicon glyphicon-user"></span> Hello, <%: HttpContext.Current.User.Identity.Name  %>  
+                                                    <span class="caret" style="margin-top:-2px"></span>
+                                                </asp:LinkButton></button>
+                                            <div class="dropdown-content" Style="width: 100%">
+                                                <asp:HyperLink ID="HyperLink1" CssClass="divdr" runat="server" NavigateUrl="~/Account/Profile" Text="Profile" />
+                                                <asp:HyperLink ID="HyperLink2" CssClass="divdr" runat="server" NavigateUrl="~/Account/Orders" Text="Orders" />
+                                                <asp:HyperLink ID="HyperLink3" CssClass="divdr" runat="server" NavigateUrl="~/Account/EditProfile.aspx" Text="Address" />
+
+                                                <asp:LoginStatus ID="LoginState" runat="server" ForeColor="Black" LoginText="&lt;i aria-hidden=&quot;true&quot; class=&quot;glyphicon glyphicon-log-in&quot;&gt;&lt;/i&gt; Sign In" CssClass="btn btn-default btn-sm pull-right" BorderStyle="None" LogoutAction="Redirect" LogoutText="&lt;i aria-hidden=&quot;true&quot; class=&quot;glyphicon glyphicon-log-out&quot;&gt;&lt;/i&gt; Sign out" LogoutPageUrl="~/Account/Login" OnLoggingOut="LoginState_LoggingOut" />
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </LoggedInTemplate>
                             </asp:LoginView>
@@ -166,7 +232,8 @@
         <hr />
         <footer>
             <p>&copy; <%: DateTime.Now.Year %> - NoshCart.com</p>
-            <p>&nbsp;<asp:HyperLink ID="AdminHyperLink" runat="server" NavigateUrl="~/Admin/AdminLogin.aspx">Admin Area</asp:HyperLink>
+            <p>
+                &nbsp;<asp:HyperLink ID="AdminHyperLink" runat="server" NavigateUrl="~/Admin/AdminLogin.aspx">Admin Area</asp:HyperLink>
             </p>
         </footer>
         <hr />

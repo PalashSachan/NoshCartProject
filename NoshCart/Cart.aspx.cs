@@ -1,4 +1,6 @@
-﻿using NoshCart.CheckLogin;
+﻿using NoshCart.BusinessLayer;
+using NoshCart.CheckLogin;
+using NoshCart.SendSMS;
 using System;
 using System.Data;
 using System.IO;
@@ -95,7 +97,47 @@ namespace NoshCart
             Check.GenerateOrderID(); //generating the OrderID
 
             Session["IsFirstTime"] = true; //setting the value true to the session variable..i have done this so that when the user is on the thankyou page and if he trys to open that thankyou page again then this will prevent doing it
+
+            SaveOrderDetailsAndUserDetails();
+            Check.PurchasedProductsToArray(); //converting the session cart datatable to 2D Array...i know you must be thinking that why the hell he is converting the datatable to 2d array when the datatable is already in the form of table and can be get data in the form of row and column....but....It was NOT working...YES..it was not working when i was using the datatable directly accessing its rows and columns....So i converted datatable into 2D Array and then it worked
+            Send.SendOrderConfirmationSMS(); //calling method to send the sms
+            Send.SendOrderConfirmationMail(); //calling method to send the email
+
             Response.Redirect("ThankYou?OrderID=" + Session["OrderID"] + "&Status=success"); //redirecting user to thankyou page with two querystrings(1) sending the orderID and (2) sending the status message
+        }
+
+        private void SaveOrderDetailsAndUserDetails() //invoked to save User and Order Details before sending the sms and email
+        {
+            string productids = string.Empty; //initialising the value..setting the string value to empty for the first time
+            DataTable dt; //declaring the datatable variable
+
+            if (Session["MyCart"] != null) //checking if the cart is null or not
+            {
+                dt = (DataTable)Session["MyCart"]; // converting entire session into data table
+
+                ShoppingCart k = new ShoppingCart() //calling and creating the object of shoppingcart class
+                {
+                    TotalProducts = Convert.ToInt32(Session["ttproduct"].ToString()), //Assigning the value of total products to the local class variable
+                    TotalPrice = Convert.ToInt32(Session["ttprice"].ToString()), //Assigning the value of total price to the local class variable
+                    PaymentMethod = Session["PaymentModeName"].ToString() //Assigning the value of payment method to the local class variable
+                };
+
+                DataTable dtResult = k.SaveCustomerDetails(); //saving the customer details and getting the result
+
+                for (int i = 0; i < dt.Rows.Count; i++) //using for loop to save all product details
+                {
+                    ShoppingCart saveproducts = new ShoppingCart()  //this will tell which customer has placed which order and customer id act as a order id
+                    {
+                        //Check.GenerateSubOrderID();
+                        sID = Convert.ToInt64(Session["Id"]), //Assigning the value of UserID to the local class variable
+                        sOrderID = Convert.ToInt64(Session["OrderID"]), //Assigning the value of OrderID to the local class variable
+                        subOrderID = Convert.ToInt64(Check.GetSubOrderID()), //Assigning the value of OrderID to the local class variable
+                        ProductID = Convert.ToInt32(dt.Rows[i]["ProductID"]), //Assigning the value of ProductID to the local class variable
+                        TotalProducts = Convert.ToInt32(dt.Rows[i]["ProductQuantity"]) //Assigning the value of total products to the local class variable
+                    };
+                    saveproducts.SaveCustomerProducts(); //saving the customer products
+                }
+            }
         }
 
         public void btnshopping() //method to display cart and its contents

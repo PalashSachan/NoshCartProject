@@ -6,39 +6,42 @@
 
     <div class="row">
         <div class="col-md-8">
-            <asp:PlaceHolder id="loginForm" runat="server">
-                <div class="form center-block">
-                    <h4>Forgot your password?</h4>
-                    <hr />
-                    <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
-                        <p class="text-danger">
-                            <asp:Literal runat="server" ID="FailureText" />
-                        </p>
-                    </asp:PlaceHolder>
-                    <div class="form-group">
-                        <form id="form1" runat="server" defaultbutton="SubmitButton">
-
-                        
-                        <asp:Label runat="server" AssociatedControlID="TextBoxUsername" CssClass="col-md-2 control-label">Username</asp:Label>
-                        <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="TextBoxUsername" CssClass="form-control" Placeholder="Enter Your Username" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="TextBoxUsername"
-                                CssClass="text-danger" ErrorMessage="The Username field is required." />
+            <asp:Panel runat="server" Visible="true" DefaultButton="SubmitButton">
+                <asp:PlaceHolder ID="loginForm" runat="server">
+                    <div class="form center-block">
+                        <h4>Forgot your password?</h4>
+                        <hr />
+                        <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
+                            <p class="text-danger">
+                                <asp:Literal runat="server" ID="FailureText" />
+                            </p>
+                        </asp:PlaceHolder>
+                        <div class="form-group">
+                            <asp:Label runat="server" AssociatedControlID="TextBoxUsername" CssClass="col-md-2 control-label">Username</asp:Label>
+                            <div class="col-md-10">
+                                <asp:TextBox runat="server" ID="TextBoxUsername" CssClass="form-control" Placeholder="Enter Your Username" />
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="TextBoxUsername"
+                                    CssClass="text-danger" ErrorMessage="The Username field is required." />
+                            </div>
                         </div>
-                    
-                        <div class="col-md-offset-2 col-md-10">
-                            <asp:Button ID="SubmitButton" runat="server" OnClick="Forgot" Text="Reset Password" CssClass="btn btn-default ButtonEffect" />
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <asp:Button ID="SubmitButton" runat="server" OnClick="Forgot" Text="Reset Password" CssClass="btn btn-default ButtonEffect" />
+                                <br />
+                                <br />
+                            </div>
                         </div>
-                            </form>
                     </div>
-                </div>
-            </asp:PlaceHolder>
-            <asp:PlaceHolder runat="server" ID="DisplayMessage" Visible="false">
-                <p class="text-success">
-                    Please check your email to reset your password.
-                </p>
-            </asp:PlaceHolder>
-            <br />
+                </asp:PlaceHolder>
+
+                <asp:PlaceHolder runat="server" ID="DisplayMessage" Visible="false">
+                    <p class="text-success">
+                        Please check your email to reset your password.
+                    </p>
+                </asp:PlaceHolder>
+
+            </asp:Panel>
+
         </div>
     </div>
 </asp:Content>

@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="Thank You" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ThankYou.aspx.cs" Inherits="NoshCart.ThankYou" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .trackmyordermargin {
+            margin-top: -10px;
+        }
+    </style>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -24,16 +29,18 @@
 
         <br />
         <div>
-            <asp:ImageButton runat="server" ID="ImageButtonTrackMyOrder" ImageUrl="~/Image/track-my-order.jpg" Width="250px" Height="50px" />
+            <asp:ImageButton runat="server" ID="ImageButtonTrackMyOrder" PostBackUrl="~/Account/Orders.aspx"
+                ImageUrl="~/Image/track-my-order.jpg" CssClass="trackmyordermargin" Width="250px" Height="50px" />
             &nbsp;
-                                            <asp:ImageButton runat="server" ID="ImageButtonContinueShopping" ImageUrl="~/Image/ContinueShoppingCart.png" PostBackUrl="~/Menu" />
+            <asp:ImageButton runat="server" ID="ImageButtonContinueShopping" ImageUrl="~/Image/ContinueShoppingCart.png"
+                PostBackUrl="~/Menu" />
             <br />
         </div>
 
         <br />
     </div>
 
-    <asp:Button runat="server" ID="HiddenButton" OnClick="HiddenButton_Click" Style="display: none" />
+    <%--<asp:Button runat="server" ID="HiddenButton" OnClick="HiddenButton_Click" Style="display: none" />
     <asp:PlaceHolder ID="PageReloadScript" runat="server">
         <script type="text/javascript">
             function SendSmsAndEmail() {
@@ -41,5 +48,5 @@
             }
             window.onload = SendSmsAndEmail;
         </script>
-    </asp:PlaceHolder>
+    </asp:PlaceHolder>--%>
 </asp:Content>

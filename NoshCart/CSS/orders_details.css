@@ -1,0 +1,272 @@
+﻿/*==========View Order Details Page Css Start==========*/
+
+.all {
+    padding: 0 15px 10px 10px;
+    width: 100%;
+    background-color: #F1F3F6;
+    text-align: center;
+    height: 100%;
+}
+
+.ODrowfirst {
+    width: 900px;
+    height: 160px;
+    box-shadow: 0 2px 4px 0;
+    margin: 16px 0 16px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    text-align: left;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.ODrowsecond {
+    width: 900px;
+    height: auto;
+    border-bottom: 2px solid #f0f0f0;
+    margin: -2px 0 0 0;
+    background-color: #ffffff;
+    border-radius: 2px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.ODrowthird {
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    height: 30px;
+    margin-left: 10px;
+    margin-top: -1px;
+    width: 900px;
+}
+
+.auto-style15 {
+    text-align: center;
+    color: red;
+    font-size: large;
+}
+
+.auto-style17 {
+    padding: 0 5px;
+    height: auto;
+}
+
+.brnCol {
+    color: #878787;
+}
+
+.blkCol {
+    color: black;
+}
+
+.blkColBld {
+    font-weight: bold;
+}
+
+.mrgbtm20 {
+    margin-bottom: 10px;
+}
+
+.mrgbtm5 {
+    margin-bottom: 5px;
+}
+
+.upcs {
+    text-transform: uppercase;
+}
+
+.pdlft10 {
+    padding-left: 10px;
+}
+
+.mrgrt20 {
+    padding-right: 10px;
+}
+
+.mrglft10 {
+    margin-left: 10px;
+}
+
+.auto-style21 {
+    padding-top: 24px;
+    width: 350px;
+    margin-right: 0px;
+}
+
+
+.auto-style22 {
+    float: left;
+    padding-top: 24px;
+    width: 350px;
+    border-left: 2px solid #f0f0f0;
+    border-right: 2px solid #f0f0f0;
+    margin-top: -140px;
+    margin-left: 350px;
+    height:171px;
+}
+
+.auto-style23 {
+    float: left;
+    padding-top: 24px;
+    width: 140px;
+    margin-top: -160px;
+    margin-left: 700px;
+}
+
+.auto-style24 {
+    width: auto;
+    height: auto;
+    font-size: 14px;
+    padding: 10px 15px 10px 15px;
+}
+
+.prc {
+    float: right;
+    font-size: large;
+    font-weight: 700;
+}
+
+
+
+/*==========View Order Details Page Css End==========*/
+
+
+
+
+/*==========Orders Page Css Start==========*/
+.outerborder {
+    border: 1px solid #e6e6e6;
+    width: 90%;
+    height: auto;
+    margin-left: 5%;
+}
+
+.rowfirst {
+    background-color: ##f9f9f9;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 15px 15px;
+}
+
+.rowthird {
+    width: auto;
+    padding: 10px 10px;
+    height: 40px;
+}
+
+.myorderButton {
+    background: #0F51C2;
+    color: #ffffff;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+}
+
+.trackbutton {
+    cursor: pointer;
+    float: right;
+    margin-top: -7px;
+    text-align: center;
+    border: 1px solid #d7d7d7;
+    padding: 6px 12px;
+    width: 100px;
+    color: #212121;
+}
+
+.rowsecond {
+    width: auto;
+    align-items: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e6e6e6;
+    font-size: 14px;
+    padding: 10px 15px 10px 15px;
+}
+
+.imagediv {
+    text-align: center;
+    margin-right: 16px;
+    width: 75px;
+    height: 75px;
+}
+
+.auto-style3 {
+    float: left;
+    margin-left: 90px;
+    margin-top: -75px;
+    margin-bottom: 5px;
+    width: 350px;
+}
+
+.auto-style4 {
+    float: left;
+    margin-left: 90px;
+    margin-top: -55px;
+    background-color: #ffffff;
+    color: #595959;
+    font-size: 12px;
+    margin-bottom: 5px;
+    width: 350px;
+}
+
+.auto-style13 {
+    float: left;
+    margin-left: 90px;
+    margin-top: -35px;
+    color: #595959;
+    font-size: 12px;
+    margin-bottom: 5px;
+    width: 350px;
+}
+
+.auto-style6 {
+    float: left;
+    margin-left: 400px;
+    margin-top: -75px;
+    color: #212121;
+    width: 100px;
+    text-transform: uppercase;
+}
+
+.auto-style7 {
+    float: right;
+    margin-top: -75px;
+    color: #212121;
+    margin-bottom: 5px;
+    width: auto;
+}
+
+.auto-style8 {
+    float: right;
+    margin-top: -55px;
+    color: #595959;
+    font-size: 12px;
+    margin-bottom: 5px;
+    width: auto;
+}
+
+.auto-style9 {
+    float: left;
+}
+
+.auto-style10 {
+    float: right;
+}
+
+.auto-style11 {
+    color: #595959;
+    padding-right: 2px;
+}
+
+.auto-style12 {
+    font-weight: bold;
+}
+
+.auto-style14 {
+    text-align: center;
+    color: forestgreen;
+    font-size: large;
+    width: auto;
+    height: auto;
+}
+
+/*==========Orders Page Css End==========*/

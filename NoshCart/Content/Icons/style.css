@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?dur127');
+  src:  url('fonts/icomoon.eot?dur127#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?dur127') format('truetype'),
+    url('fonts/icomoon.woff?dur127') format('woff'),
+    url('fonts/icomoon.svg?dur127#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone2:before {
+  content: "\e908";
+}
+.icon-phone:before {
+  content: "\e909";
+}
+.icon-restaurant_menu:before {
+  content: "\e901";
+}
+.icon-restaurant:before {
+  content: "\e902";
+}
+.icon-live_help:before {
+  content: "\e900";
+}
+.icon-phone4:before {
+  content: "\e90a";
+}
+.icon-info-circle:before {
+  content: "\e907";
+}
+.icon-info-with-circle:before {
+  content: "\e906";
+}
+.icon-phone3:before {
+  content: "\e90b";
+}
+.icon-contact:before {
+  content: "\e90b";
+}
+.icon-info2:before {
+  content: "\e905";
+}
+.icon-info:before {
+  content: "\e904";
+}
+.icon-file-text2:before {
+  content: "\e926";
+}
+.icon-phone5:before {
+  content: "\e942";
+}
+.icon-spoon-knife:before {
+  content: "\e9a3";
+}
+.icon-truck:before {
+  content: "\e9b0";
+}
+.icon-information:before {
+  content: "\e903";
+}

@@ -50,7 +50,7 @@ namespace NoshCart
 
             Dlprod.DataSource = null; //setting datasource of categories to null
             Dlprod.DataSource = k.Getallproducts(); //calling the Getallproducts function available in shoppingcart class to get the list of all available products according to category ID
-            Dlprod.DataBind(); //setting the categories names to display it
+            Dlprod.DataBind(); //menu items data binding to display it
         }
 
         protected void LinkButton2_Click(object sender, EventArgs e) //this function is invoked when user clicks on the food type category list items

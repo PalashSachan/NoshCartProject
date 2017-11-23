@@ -149,8 +149,12 @@
     <Content Include="Account\Forgot.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\Orders.aspx" />
+    <Content Include="Account\order_details.aspx" />
     <Content Include="Account\Profile.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Account\WebForm1.aspx" />
+    <Content Include="Account\WebForm2.aspx" />
     <Content Include="Admin\AdminLogin.aspx" />
     <Content Include="Admin\AddEditCategory.aspx" />
     <Content Include="Admin\AddNewProduct.aspx" />
@@ -169,13 +173,15 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Icons\css\fontello.css" />
+    <Content Include="Content\Icons\style.css" />
     <Content Include="CSS\about.css" />
     <Content Include="CSS\Contact.css" />
     <Content Include="CSS\demo.css" />
     <Content Include="CSS\home.css" />
     <Content Include="CSS\M_Admin.css" />
+    <Content Include="CSS\orders_details.css" />
     <Content Include="CSS\style.css" />
+    <Content Include="CSS\style_home.css" />
     <Content Include="engine1\arrows.png" />
     <Content Include="engine1\bullet.png" />
     <Content Include="engine1\jquery.js" />
@@ -198,6 +204,13 @@
     <Content Include="Home.aspx" />
     <Content Include="Image\about.png" />
     <Content Include="Image\background.jpg" />
+    <Content Include="Image\Home\chefs.jpg" />
+    <Content Include="Image\Home\item1.jpg" />
+    <Content Include="Image\Home\item2.jpg" />
+    <Content Include="Image\Home\item3.jpg" />
+    <Content Include="Image\Home\item4.jpg" />
+    <Content Include="Image\Home\today_special.jpg" />
+    <Content Include="Image\ordstatus.png" />
     <Content Include="Image\track-my-order.jpg" />
     <Content Include="Image\banner.jpg" />
     <Content Include="Image\cart.jpg" />
@@ -249,6 +262,7 @@
     </Content>
     <Content Include="Admin\Site1.Master" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\camera.min.home.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
@@ -256,6 +270,8 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery_home.1.3.js" />
+    <Content Include="Scripts\jquery_home.js" />
     <Content Include="Site.Mobile.Master" />
     <Content Include="Site.Master" />
     <Content Include="Content\bootstrap-theme.css.map" />
@@ -319,6 +335,20 @@
     <Compile Include="Account\ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Account\Orders.aspx.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Orders.aspx.designer.cs">
+      <DependentUpon>Orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\order_details.aspx.cs">
+      <DependentUpon>order_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\order_details.aspx.designer.cs">
+      <DependentUpon>order_details.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -332,6 +362,20 @@
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\AdminLogin.aspx.cs">
       <DependentUpon>AdminLogin.aspx</DependentUpon>

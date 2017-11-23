@@ -24,6 +24,7 @@ namespace NoshCart.BusinessLayer
 
         public long sID;
         public long sOrderID;
+        public long subOrderID;
 
         public string OrderStatus;
         public string OrderNo;
@@ -112,13 +113,14 @@ namespace NoshCart.BusinessLayer
         internal void SaveCustomerProducts() //invoked when the user places the order to save the product details
         {
             //creating the sqlparameter object
-            SqlParameter[] parameters = new SqlParameter[4];
+            SqlParameter[] parameters = new SqlParameter[5];
 
             //adding the parameters
             parameters[0] = DataAccess.AddParameter("@Id", Convert.ToInt64(sID), SqlDbType.BigInt, 20);
             parameters[1] = DataAccess.AddParameter("@OrderID", Convert.ToInt64(sOrderID), SqlDbType.BigInt, 20);
-            parameters[2] = DataAccess.AddParameter("@ProductID", ProductID, SqlDbType.Int, 20);
-            parameters[3] = DataAccess.AddParameter("@TotalProducts", TotalProducts, SqlDbType.Int, 10);
+            parameters[2] = DataAccess.AddParameter("@SubOrderID", Convert.ToInt64(subOrderID), SqlDbType.BigInt, 20);
+            parameters[3] = DataAccess.AddParameter("@ProductID", ProductID, SqlDbType.Int, 20);
+            parameters[4] = DataAccess.AddParameter("@TotalProducts", TotalProducts, SqlDbType.Int, 10);
 
             //executing the Stored Procedure
             DataTable dt = DataAccess.ExecuteDTByProcedure("SP_SaveCustomerProducts",parameters);
