@@ -3,6 +3,13 @@
 
 Learning ASP.NET for me as a student is very fun..It's a demo shopping website for learning educational purpose only
 
+A website in ASP.NET of Indian restaurant which provide verity of
+food as well as contain information about food (from where it belongs), it provides various
+information regarding the places and provides multiple options to contact and review places.
+
+It also has many features like Sign-in, Sign-up, cart items updating, sending order
+confirmation email and message in customer mobile number, order details and many more.
+
 
 This NoshCart(FoodCart) Project in INCOMPLETE and is Under Development.
 
