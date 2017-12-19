@@ -15,13 +15,13 @@ This NoshCart(FoodCart) Project in INCOMPLETE and is Under Development.
 
 So, There are many bugs(especially in UI when opened in small screen or mobile web browsers and don't have much known bugs in code).
 
-For Live Demo Please Visit :-
+For Live Demo Please Visit URL :-
 
-http://palashsachanvs-001-site1.atempurl.com/
+http://palashnosh-001-site1.itempurl.com/
 
-(this website in hosted on the free server(https://www.myasp.net/) so its temporary available only till Dec 5, 2017)
+(this website in hosted on the free server(https://www.myasp.net/) so its temporary available only till Feb 17, 2018)
 
-GitHub Repository:-
+GitHub Repository URL:-
 
 https://github.com/PalashSachan/NoshCartProject
 
