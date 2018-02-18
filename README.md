@@ -17,7 +17,7 @@ So, There are many bugs(especially in UI when opened in small screen or mobile w
 
 For Live Demo Please Visit URL :-
 
-http://palashnosh-001-site1.itempurl.com/
+http://rahulb1821-001-site1.etempurl.com
 
 (this website in hosted on the free server(https://www.myasp.net/) so its temporary available only till Feb 17, 2018)
 
