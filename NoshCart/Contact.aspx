@@ -49,7 +49,7 @@
 
                     </td>
                     <td>
-                        palashsachan@gmail.com
+                        mail@gmail.com
                     </td>
                 </tr>
             </table>

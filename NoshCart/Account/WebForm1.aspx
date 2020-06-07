@@ -51,7 +51,7 @@
 					</div>
 
 					<div class="mrgbtm5 mrglft10">
-						<span class="blkColBld">Palash Sachan</span>
+						<span class="blkColBld">Name</span>
 					</div>
 
 					<div class="mrgbtm5 mrglft10">

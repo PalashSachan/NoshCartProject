@@ -188,8 +188,8 @@
                                     <li>Kanpur</li>
                                     <li>Uttar Pradesh</li>
                                     <li></li>
-                                    <li><a href="mailto:palashsachan@gmail.com">palashsachan@gmail.com</a></li>
-                                    <li><span>Mobile :</span> +91 995 6551996</li>
+                                    <li><a href="mailto:mail@gmail.com">mail@gmail.com</a></li>
+                                    <li><span>Mobile :</span> +91 9876543210</li>
                                 </ul>
                             </div>
                         </div>
