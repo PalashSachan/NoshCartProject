@@ -196,7 +196,7 @@ namespace NoshCart.SendSMS
         {
             try
             {
-                MailMessage mailMessage = new MailMessage("palashsachantesting@gmail.com", ToEmail); //creating the new mailmessage object with FROM and TO email as parameters
+                MailMessage mailMessage = new MailMessage("infokazas@gmail.com", ToEmail); //creating the new mailmessage object with FROM and TO email as parameters
 
                 mailMessage.IsBodyHtml = true; //setting the html body true
 
@@ -206,8 +206,8 @@ namespace NoshCart.SendSMS
 
                 smtpClient.Credentials = new NetworkCredential() //saving the gmail Login ID and Password
                 {
-                    UserName = "palashsachantesting@gmail.com",
-                    Password = "91@PalashTesting"
+                    UserName = "infokazas@gmail.com",
+                    Password = "Rajat@1996"
                 };
 
                 smtpClient.EnableSsl = true; //enabling the SSL while sending the email so that its secure and encrypted

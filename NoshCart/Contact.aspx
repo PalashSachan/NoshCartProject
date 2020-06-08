@@ -40,7 +40,7 @@
                          <img src="Image/text.png" class="auto-style1" />
                     </td>
                     <td>
-                        +919956551996
+                        +91978456512
                     </td>
                 </tr>
                 <tr>

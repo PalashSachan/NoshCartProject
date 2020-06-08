@@ -27,7 +27,7 @@ namespace NoshCart.Error
                 sb = geterror(err.GetBaseException());
                 Session["LastError"] = null;
 
-                NoshCart.SendSMS.Send.send_Email("Palashsachantesting@gmail.com", "[URGENT ATTENTION - ERROR OCCURRED]", sb);
+                NoshCart.SendSMS.Send.send_Email("infokazas@gmail.com", "[URGENT ATTENTION - ERROR OCCURRED]", sb);
             }
         }
 
